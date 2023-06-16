@@ -28,6 +28,9 @@ jobs:
         run: |
           python -m pytest -v tests
 
+      - name: tests
+        permissions: write-all
+
       - name: Build coverage file
         run: |
           pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=app tests/ | tee pytest-coverage.txt
